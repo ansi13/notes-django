@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes|Home</title>
+</head>
+<body>
+{% block content %}
+<nav>
+    <a href="{% url 'create' %}">Create</a> |
+    <a href="{% url 'logout' %}">Logout</a>
+</nav>
+    <p></p>
+    {% for note in notes %}
+        <div align="center">
+        <h3>{{ note.title }}</h3>
+        <p></p>
+        <p>{{ note.text }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
+</body>
+</html>

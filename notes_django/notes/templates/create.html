@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes|Create</title>
+</head>
+<body>
+{% block content %}
+<div align="center">
+    <form method="post" action="{% url 'create' %}">
+    {% csrf_token %}
+    {{ notes_form.title }}
+    <p></p>
+    {{ notes_form.text }}
+    <p></p>
+    <button type="submit">create</button>
+</form>
+</div>
+{% endblock %}
+
+</body>
+</html>
